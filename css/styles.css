@@ -1565,7 +1565,7 @@ a:hover {
 }
 
 .header-inner {
-  height: 76px;
+  height: 112px;
 }
 
 .logo-link img {
@@ -2012,6 +2012,7 @@ a:hover {
 
 @media (max-width: 640px) {
   .main-nav {
+    top: 112px;
     background: rgba(255, 255, 255, 0.98);
     border-bottom: 1px solid var(--color-border);
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.14);

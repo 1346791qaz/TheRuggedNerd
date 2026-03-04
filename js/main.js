@@ -42,11 +42,122 @@
     toggleButton.setAttribute("aria-pressed", String(isDark));
   };
 
+  const getSearchPageHref = () => {
+    const homeLink = document.querySelector('.main-nav a[href$="index.html"]');
+    const homeHref = homeLink ? homeLink.getAttribute("href") : "index.html";
+    return homeHref
+      ? homeHref.replace(/index\.html$/i, "search.html")
+      : "search.html";
+  };
+
+  const createSearchUrl = (baseHref, query) => {
+    const normalizedQuery = (query || "").trim();
+    if (!normalizedQuery) return baseHref;
+
+    const params = new URLSearchParams();
+    params.set("q", normalizedQuery);
+    return `${baseHref}?${params.toString()}`;
+  };
+
   const initialTheme = getInitialTheme();
   applyTheme(initialTheme);
 
   const navList = document.querySelector(".main-nav ul");
   if (navList) {
+    const searchPageHref = getSearchPageHref();
+
+    let navSearchItem = navList.querySelector(".nav-search-item");
+    if (!navSearchItem) {
+      navSearchItem = document.createElement("li");
+      navSearchItem.className = "nav-search-item";
+      navSearchItem.innerHTML = `
+        <form class="nav-search-form" role="search" aria-label="Search site">
+          <label class="sr-only" for="nav-search-input">Search site</label>
+          <input
+            id="nav-search-input"
+            class="nav-search-input"
+            type="search"
+            name="q"
+            placeholder="Search..."
+            autocomplete="off"
+          />
+          <button
+            class="nav-search-toggle"
+            type="button"
+            aria-label="Open site search"
+            aria-expanded="false"
+          >
+            <span aria-hidden="true">🔍</span>
+          </button>
+        </form>
+      `;
+      navList.insertBefore(navSearchItem, navList.firstElementChild);
+    }
+
+    const navSearchForm = navSearchItem.querySelector(".nav-search-form");
+    const navSearchInput = navSearchItem.querySelector(".nav-search-input");
+    const navSearchToggle = navSearchItem.querySelector(".nav-search-toggle");
+
+    if (navSearchForm && navSearchInput && navSearchToggle) {
+      const openNavSearch = () => {
+        navSearchForm.classList.add("open");
+        navSearchToggle.setAttribute("aria-expanded", "true");
+        navSearchInput.focus();
+      };
+
+      const closeNavSearch = () => {
+        navSearchForm.classList.remove("open");
+        navSearchToggle.setAttribute("aria-expanded", "false");
+      };
+
+      const submitNavSearch = () => {
+        window.location.href = createSearchUrl(searchPageHref, navSearchInput.value);
+      };
+
+      const queryFromUrl = new URLSearchParams(window.location.search).get("q");
+      const onSearchPage = window.location.pathname.endsWith("search.html");
+      if (queryFromUrl) {
+        navSearchInput.value = queryFromUrl;
+      }
+      if (onSearchPage && queryFromUrl) {
+        navSearchForm.classList.add("open");
+        navSearchToggle.setAttribute("aria-expanded", "true");
+      }
+
+      navSearchToggle.addEventListener("click", () => {
+        const isOpen = navSearchForm.classList.contains("open");
+        if (!isOpen) {
+          openNavSearch();
+          return;
+        }
+
+        if (navSearchInput.value.trim()) {
+          submitNavSearch();
+        } else {
+          closeNavSearch();
+        }
+      });
+
+      navSearchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        submitNavSearch();
+      });
+
+      navSearchInput.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          event.preventDefault();
+          closeNavSearch();
+          navSearchInput.blur();
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!navSearchItem.contains(event.target)) {
+          closeNavSearch();
+        }
+      });
+    }
+
     let themeToggleButton = navList.querySelector(".theme-toggle");
 
     if (!themeToggleButton) {
@@ -109,25 +220,83 @@
   });
 
   // ── Blog category filter ────────────────────────────────────
-  const catBtns = document.querySelectorAll(".cat-btn");
+  const catBtns = document.querySelectorAll(".cat-btn[data-filter]");
   const blogCards = document.querySelectorAll(".blog-card[data-cat]");
+  const blogSearchInput = document.getElementById("blog-search-input");
+  const blogSearchClear = document.getElementById("blog-search-clear");
+  const blogSearchAll = document.querySelector(".blog-search-all");
 
-  if (catBtns.length) {
+  const normalizeText = (value) =>
+    String(value || "")
+      .toLowerCase()
+      .replace(/\s+/g, " ")
+      .trim();
+
+  const getActiveBlogFilter = () => {
+    const activeButton = document.querySelector(".cat-btn.active[data-filter]");
+    return activeButton ? activeButton.dataset.filter : "all";
+  };
+
+  const applyBlogFilters = () => {
+    if (!blogCards.length) return;
+
+    const activeFilter = getActiveBlogFilter();
+    const query = normalizeText(blogSearchInput ? blogSearchInput.value : "");
+
+    blogCards.forEach((card) => {
+      const category = card.dataset.cat || "";
+      const title = card.querySelector("h3")?.textContent || "";
+      const summary = card.querySelector("p")?.textContent || "";
+      const content = normalizeText(`${title} ${summary} ${category}`);
+
+      const matchesCategory = activeFilter === "all" || category === activeFilter;
+      const matchesSearch = !query || content.includes(query);
+
+      card.style.display = matchesCategory && matchesSearch ? "" : "none";
+    });
+  };
+
+  if (blogCards.length) {
     catBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
         catBtns.forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
-
-        const filter = btn.dataset.filter;
-        blogCards.forEach((card) => {
-          if (filter === "all" || card.dataset.cat === filter) {
-            card.style.display = "";
-          } else {
-            card.style.display = "none";
-          }
-        });
+        applyBlogFilters();
       });
     });
+
+    if (blogSearchInput) {
+      blogSearchInput.addEventListener("input", applyBlogFilters);
+
+      if (blogSearchAll) {
+        const updateBlogSearchHref = () => {
+          blogSearchAll.setAttribute(
+            "href",
+            createSearchUrl(getSearchPageHref(), blogSearchInput.value),
+          );
+        };
+
+        updateBlogSearchHref();
+        blogSearchInput.addEventListener("input", updateBlogSearchHref);
+      }
+
+      blogSearchInput.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          blogSearchInput.value = "";
+          applyBlogFilters();
+        }
+      });
+    }
+
+    if (blogSearchClear && blogSearchInput) {
+      blogSearchClear.addEventListener("click", () => {
+        blogSearchInput.value = "";
+        applyBlogFilters();
+        blogSearchInput.focus();
+      });
+    }
+
+    applyBlogFilters();
   }
 
   // ── Photo lightbox ─────────────────────────────────────────

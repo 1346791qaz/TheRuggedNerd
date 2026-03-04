@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="The Rugged Nerd Blog — Trip reports, RV tips, campground reviews, gear guides, and family adventure stories from the road."
+      content="Search The Rugged Nerd site content including blogs, resources, and photos."
     />
-    <title>Blog — The Rugged Nerd</title>
+    <title>Search — The Rugged Nerd</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪓</text></svg>"
     />
   </head>
-  <body>
+  <body class="search-page">
     <!-- ══════════════════════ HEADER ══════════════════════ -->
     <header class="site-header">
       <div class="header-inner">
@@ -69,111 +69,70 @@
               letter-spacing: 0.2em;
               color: var(--color-text-faint);
             "
-            >// trail log</span
+            >// search</span
           >
         </p>
-        <h1>The Blog</h1>
+        <h1>Search</h1>
         <p class="page-subtitle">
-          Trip reports, RV tips, campground reviews, gear guides, and everything
-          in between — straight from the campfire to your screen.
+          Find blogs, resources, and photo metadata across the site.
         </p>
-        <div class="blog-page-search" role="search" aria-label="Search blog posts">
-          <label class="sr-only" for="blog-search-input">Search blog posts</label>
-          <input
-            id="blog-search-input"
-            class="blog-search-input"
-            type="search"
-            placeholder="Search blog posts by title or content"
-            autocomplete="off"
-          />
-          <button id="blog-search-clear" class="blog-search-clear" type="button">
-            Clear
-          </button>
-          <a class="blog-search-all" href="search.html">Search all content →</a>
-        </div>
       </div>
     </div>
 
-    <!-- ══════════════════════ BLOG CONTENT ══════════════════════ -->
-    <section class="blog-section">
+    <!-- ══════════════════════ SEARCH CONTENT ══════════════════════ -->
+    <section class="blog-section search-layout">
       <div class="container">
-        <!-- Category Filters -->
-        <div
-          class="cat-filters"
-          role="group"
-          aria-label="Filter posts by category"
-        >
-          <button class="cat-btn active" data-filter="all">All Posts</button>
-          <button class="cat-btn" data-filter="trips">🗺 Trips</button>
-          <button class="cat-btn" data-filter="tips">💡 RV Tips</button>
-          <button class="cat-btn" data-filter="reviews">⭐ Reviews</button>
+        <div class="search-panel">
+          <form id="search-form" class="search-form" role="search">
+            <label class="sr-only" for="search-query">Search site content</label>
+            <input
+              id="search-query"
+              class="search-query-input"
+              type="search"
+              placeholder="Search blogs, resources, and photos"
+              autocomplete="off"
+            />
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+
+          <div class="search-toolbar">
+            <fieldset class="search-filters">
+              <legend class="sr-only">Filter search results by content type</legend>
+              <label class="search-filter-chip">
+                <input type="checkbox" name="type-filter" value="blog" checked />
+                Blogs
+              </label>
+              <label class="search-filter-chip">
+                <input
+                  type="checkbox"
+                  name="type-filter"
+                  value="resources"
+                  checked
+                />
+                Resources
+              </label>
+              <label class="search-filter-chip">
+                <input type="checkbox" name="type-filter" value="photos" checked />
+                Photos
+              </label>
+            </fieldset>
+
+            <label class="search-sort">
+              Sort
+              <select id="search-sort" aria-label="Sort search results">
+                <option value="relevance">Relevance</option>
+                <option value="newest">Date: Newest</option>
+                <option value="oldest">Date: Oldest</option>
+              </select>
+            </label>
+          </div>
         </div>
 
-        <!-- Blog Grid -->
-        <div class="blog-grid">
-          <!-- TRIPS -->
-          <a
-            href="blog/rocky-mountain-trip.html"
-            class="blog-card"
-            data-cat="trips"
-          >
-            <div class="blog-card-image">🏔️</div>
-            <div class="blog-card-body">
-              <div class="blog-card-meta">
-                <span class="blog-cat trips">Trips</span>
-                <span class="blog-date">Feb 2025</span>
-              </div>
-              <h3>Rocky Mountain High: Colorado</h3>
-              <p>
-                Every year we make it a point to get up to the Rockies for a
-                week of hiking, exploring, and soaking in those mountain views.
-              </p>
-              <span class="read-more">Read more →</span>
-            </div>
-          </a>
-
-          <!-- TIPS -->
-          <a href="blog/rv-wifi-setup.html" class="blog-card" data-cat="tips">
-            <div class="blog-card-image">📡</div>
-            <div class="blog-card-body">
-              <div class="blog-card-meta">
-                <span class="blog-cat tips">RV Tips</span>
-                <span class="blog-date">Jan 2025</span>
-              </div>
-              <h3>
-                The Rugged Nerd's Guide to RVs: Why We Chose a Travel Trailer
-              </h3>
-              <p>
-                We break down the different types of RVs — from pop-ups to Class
-                A motorhomes — and share why we chose a travel trailer for our
-                family adventures.
-              </p>
-              <span class="read-more">Read more →</span>
-            </div>
-          </a>
-
-          <!-- REVIEWS -->
-          <a
-            href="blog/campground-review-zion.html"
-            class="blog-card"
-            data-cat="reviews"
-          >
-            <div class="blog-card-image">🏜️</div>
-            <div class="blog-card-body">
-              <div class="blog-card-meta">
-                <span class="blog-cat reviews">Campground Review</span>
-                <span class="blog-date">Dec 2024</span>
-              </div>
-              <h3>Loyd Park at Joe Pool Lake, Grand Prairie, TX</h3>
-              <p>
-                A hidden gem just outside Dallas, Loyd Park offers a peaceful
-                lakeside escape with spacious sites, great amenities, and easy
-                access to the city when you need a break from nature.
-              </p>
-              <span class="read-more">Read more →</span>
-            </div>
-          </a>
+        <p id="search-summary" class="search-summary"></p>
+        <div id="search-empty" class="search-empty" role="status" aria-live="polite">
+          No results found. Try a different search term or adjust filters.
         </div>
+        <div id="search-results" class="search-results-grid"></div>
       </div>
     </section>
 
@@ -223,9 +182,7 @@
                 >
               </li>
               <li>
-                <a href="assets/downloads/pre-departure-full.pdf"
-                  >Pre-Departure</a
-                >
+                <a href="assets/downloads/pre-departure-full.pdf">Pre-Departure</a>
               </li>
               <li>
                 <a href="assets/downloads/maintenance-log-trailer.pdf"
@@ -240,8 +197,7 @@
         </div>
         <div class="footer-bottom">
           <span class="footer-copy"
-            >© 2025 The Rugged Nerd · theruggednerd.com · All rights
-            reserved</span
+            >© 2025 The Rugged Nerd · theruggednerd.com · All rights reserved</span
           >
           <span class="footer-tagline"
             ><span class="dot"></span>The mountain is calling, and we must
@@ -252,5 +208,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>

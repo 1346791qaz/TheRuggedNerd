@@ -111,7 +111,10 @@
       };
 
       const submitNavSearch = () => {
-        window.location.href = createSearchUrl(searchPageHref, navSearchInput.value);
+        window.location.href = createSearchUrl(
+          searchPageHref,
+          navSearchInput.value,
+        );
       };
 
       const queryFromUrl = new URLSearchParams(window.location.search).get("q");
@@ -249,7 +252,8 @@
       const summary = card.querySelector("p")?.textContent || "";
       const content = normalizeText(`${title} ${summary} ${category}`);
 
-      const matchesCategory = activeFilter === "all" || category === activeFilter;
+      const matchesCategory =
+        activeFilter === "all" || category === activeFilter;
       const matchesSearch = !query || content.includes(query);
 
       card.style.display = matchesCategory && matchesSearch ? "" : "none";

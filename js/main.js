@@ -3,6 +3,75 @@
 (function () {
   "use strict";
 
+  // ── Theme toggle / dark mode ─────────────────────────────
+  const THEME_STORAGE_KEY = "trn-theme";
+  const root = document.documentElement;
+
+  const getInitialTheme = () => {
+    try {
+      const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+      if (storedTheme === "dark" || storedTheme === "light") {
+        return storedTheme;
+      }
+    } catch (error) {
+      // Ignore storage errors
+    }
+
+    return window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+
+  const applyTheme = (theme) => {
+    root.setAttribute("data-theme", theme);
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+    } catch (error) {
+      // Ignore storage errors
+    }
+  };
+
+  const updateThemeToggleLabel = (toggleButton, theme) => {
+    const isDark = theme === "dark";
+    toggleButton.textContent = isDark ? "☀ Light" : "🌙 Dark";
+    toggleButton.setAttribute(
+      "aria-label",
+      isDark ? "Switch to light mode" : "Switch to dark mode",
+    );
+    toggleButton.setAttribute("aria-pressed", String(isDark));
+  };
+
+  const initialTheme = getInitialTheme();
+  applyTheme(initialTheme);
+
+  const navList = document.querySelector(".main-nav ul");
+  if (navList) {
+    let themeToggleButton = navList.querySelector(".theme-toggle");
+
+    if (!themeToggleButton) {
+      const themeToggleItem = document.createElement("li");
+      themeToggleItem.className = "theme-toggle-item";
+
+      themeToggleButton = document.createElement("button");
+      themeToggleButton.className = "theme-toggle";
+      themeToggleButton.type = "button";
+
+      themeToggleItem.appendChild(themeToggleButton);
+      navList.appendChild(themeToggleItem);
+    }
+
+    updateThemeToggleLabel(themeToggleButton, initialTheme);
+
+    themeToggleButton.addEventListener("click", () => {
+      const currentTheme = root.getAttribute("data-theme") || "light";
+      const nextTheme = currentTheme === "dark" ? "light" : "dark";
+      applyTheme(nextTheme);
+      updateThemeToggleLabel(themeToggleButton, nextTheme);
+      window.dispatchEvent(new Event("scroll"));
+    });
+  }
+
   // ── Mobile nav toggle ──────────────────────────────────────
   const navToggle = document.querySelector(".nav-toggle");
   const mainNav = document.querySelector(".main-nav");

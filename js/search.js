@@ -9,6 +9,24 @@
 
   const SEARCH_ITEMS = [
     {
+      id: "blog-ha-ha-tonka-castle-ruins",
+      type: "blog",
+      title: "Ha Ha Tonka Castle Ruins",
+      content:
+        "Family trip post about Ha Ha Tonka State Park castle ruins, Ozark views, drone footage coming soon, and a reflection on holding close to your loved ones.",
+      url: "blog/ha-ha-tonka-castle-ruins.html",
+      date: "2026-03-08",
+      tags: [
+        "ha ha tonka",
+        "castle ruins",
+        "missouri",
+        "state park",
+        "family trip",
+        "drone footage",
+        "ozarks",
+      ],
+    },
+    {
       id: "blog-camper-deal-tips",
       type: "blog",
       title: "The Best Tips to Get a Great Deal on a Camper",

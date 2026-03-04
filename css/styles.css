@@ -950,6 +950,7 @@ img {
 
 .photo-item {
   position: relative;
+  margin: 0;
   border-radius: var(--radius-md);
   overflow: hidden;
   cursor: pointer;
@@ -966,6 +967,17 @@ img {
     0 8px 32px rgba(0, 0, 0, 0.6),
     0 0 0 1px rgba(24, 66, 138, 0.2);
   z-index: 2;
+}
+
+.photo-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.photo-item .photo-caption {
+  padding: var(--space-sm) var(--space-md) var(--space-md);
 }
 
 .photo-placeholder {

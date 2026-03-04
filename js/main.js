@@ -43,11 +43,19 @@
   };
 
   const getSearchPageHref = () => {
-    const homeLink = document.querySelector('.main-nav a[href$="index.html"]');
-    const homeHref = homeLink ? homeLink.getAttribute("href") : "index.html";
-    return homeHref
-      ? homeHref.replace(/index\.html$/i, "search.html")
-      : "search.html";
+    try {
+      const mainScript = document.querySelector('script[src*="main.js"]');
+      const mainScriptSrc = mainScript ? mainScript.getAttribute("src") : "";
+
+      if (mainScriptSrc) {
+        const resolvedMainScript = new URL(mainScriptSrc, window.location.href);
+        return new URL("../search.html", resolvedMainScript).pathname;
+      }
+    } catch (error) {
+      // Ignore URL parsing errors
+    }
+
+    return "/search.html";
   };
 
   const createSearchUrl = (baseHref, query) => {

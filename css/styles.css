@@ -1966,6 +1966,10 @@ a:hover {
 .hero h1 .accent-green {
   color: var(--color-accent);
   text-shadow: none;
+  display: inline-block;
+  font-size: 0.84em;
+  margin-top: 0.08em;
+  line-height: 1.05;
 }
 
 .hero h1 .accent-wood {

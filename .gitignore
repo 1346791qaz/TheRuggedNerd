@@ -1,2 +1,2 @@
-# Wayback/imported raw snapshots
-blog/archive/
+# Ignore nested folders under blog
+blog/*/

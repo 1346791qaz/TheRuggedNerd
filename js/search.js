@@ -31,7 +31,7 @@
       type: "blog",
       title: "Osceola RV Park",
       content:
-        "Refreshed archive post about Osceola, Missouri, the iconic Osceola Cheese billboard, and an easy campground stop for family road trips.",
+        "Post about Osceola, Missouri, the iconic Osceola Cheese billboard, and an easy campground stop for family road trips.",
       url: "blog/osceola-rv-park.html",
       date: "2026-02-18",
       tags: [
@@ -48,7 +48,7 @@
       type: "blog",
       title: "North Arkansas — A Weekend With A View",
       content:
-        "Refreshed archive weekend trip story focused on quick family travel, crossing into a new state, and scenic North Arkansas views.",
+        "Weekend trip story focused on quick family travel, crossing into a new state, and scenic North Arkansas views.",
       url: "blog/north-arkansas-a-weekend-with-a-view.html",
       date: "2026-01-27",
       tags: [
@@ -65,7 +65,7 @@
       type: "blog",
       title: "Falling Water Falls",
       content:
-        "Refreshed archive post covering Falling Water Falls in Sand Gap, Arkansas, with nearby Pedestal Rock and King's Bluff trail references.",
+        "Post covering Falling Water Falls in Sand Gap, Arkansas, with nearby Pedestal Rock and King's Bluff trail references.",
       url: "blog/falling-water-falls.html",
       date: "2025-12-15",
       tags: [

@@ -1,233 +1,379 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The Rugged Nerd Blog — Trip reports, RV tips, campground reviews, gear guides, and family adventure stories from the road." />
-  <title>Blog — The Rugged Nerd</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪓</text></svg>" />
-</head>
-<body>
-
-  <!-- ══════════════════════ HEADER ══════════════════════ -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo-link" aria-label="The Rugged Nerd — Home">
-        <img src="images/logo.svg" alt="The Rugged Nerd" width="180" height="44" />
-      </a>
-      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="photos.html">Photos</a></li>
-        </ul>
-      </nav>
-      <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- ══════════════════════ PAGE HEADER ══════════════════════ -->
-  <div class="page-header">
-    <div class="container">
-      <p class="section-eyebrow" style="justify-content:center; display:flex; align-items:center; gap:.5rem; margin-bottom:.75rem;">
-        <span style="font-family:var(--font-mono); font-size:.78rem; letter-spacing:.2em; color:var(--color-text-faint);">// trail log</span>
-      </p>
-      <h1>The Blog</h1>
-      <p class="page-subtitle">Trip reports, RV tips, campground reviews, gear guides, and everything in between — straight from the campfire to your screen.</p>
-    </div>
-  </div>
-
-  <!-- ══════════════════════ BLOG CONTENT ══════════════════════ -->
-  <section class="blog-section">
-    <div class="container">
-
-      <!-- Category Filters -->
-      <div class="cat-filters" role="group" aria-label="Filter posts by category">
-        <button class="cat-btn active" data-filter="all">All Posts</button>
-        <button class="cat-btn" data-filter="trips">🗺 Trips</button>
-        <button class="cat-btn" data-filter="tips">💡 RV Tips</button>
-        <button class="cat-btn" data-filter="reviews">⭐ Reviews</button>
-        <button class="cat-btn" data-filter="gear">🔧 Gear &amp; Tech</button>
-      </div>
-
-      <!-- Blog Grid -->
-      <div class="blog-grid">
-
-        <!-- TRIPS -->
-        <a href="blog/rocky-mountain-trip.html" class="blog-card" data-cat="trips">
-          <div class="blog-card-image">🏔️</div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-cat trips">Trips</span>
-              <span class="blog-date">Feb 14, 2025</span>
-            </div>
-            <h3>Rocky Mountain High: 10 Days in Colorado with 3 Kids &amp; 2 Dogs</h3>
-            <p>We pointed Blue west and didn't look back. Here's everything that went right (and a few things that didn't) on our longest trip yet.</p>
-            <span class="read-more">Read more →</span>
-          </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Rugged Nerd Blog — Trip reports, RV tips, campground reviews, gear guides, and family adventure stories from the road."
+    />
+    <title>Blog — The Rugged Nerd</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪓</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- ══════════════════════ HEADER ══════════════════════ -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a
+          href="index.html"
+          class="logo-link"
+          aria-label="The Rugged Nerd — Home"
+        >
+          <img
+            src="images/shield.png"
+            alt="The Rugged Nerd"
+            width="60"
+            height="60"
+          />
         </a>
-
-        <a href="blog/smoky-mountains.html" class="blog-card" data-cat="trips">
-          <div class="blog-card-image">🌫️</div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-cat trips">Trips</span>
-              <span class="blog-date">Oct 8, 2024</span>
-            </div>
-            <h3>Smoky Mountain Shakedown: Our First Big Trip in Dorey</h3>
-            <p>Nothing breaks in a new trailer like an ambitious first trip through the Smokies in October. Spoiler: the water heater won.</p>
-            <span class="read-more">Read more →</span>
-          </div>
-        </a>
-
-        <a href="blog/pacific-coast-highway.html" class="blog-card" data-cat="trips">
-          <div class="blog-card-image">🌊</div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-cat trips">Trips</span>
-              <span class="blog-date">Jul 4, 2024</span>
-            </div>
-            <h3>Pacific Coast Highway in a 25-Footer: Tips, Pullouts, and Pure Awe</h3>
-            <p>PCH in a travel trailer sounds crazy. We tried it anyway. Here's what we wish we'd known before mile 1.</p>
-            <span class="read-more">Read more →</span>
-          </div>
-        </a>
-
-        <!-- TIPS -->
-        <a href="blog/rv-wifi-setup.html" class="blog-card" data-cat="tips">
-          <div class="blog-card-image">📡</div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-cat tips">RV Tips</span>
-              <span class="blog-date">Jan 20, 2025</span>
-            </div>
-            <h3>The Rugged Nerd's Guide to Full-Time RV Wi-Fi That Actually Works</h3>
-            <p>From cellular boosters to Starlink integration — the complete setup I use to stay connected from the backcountry.</p>
-            <span class="read-more">Read more →</span>
-          </div>
-        </a>
-
-        <a href="blog/trailer-winterization.html" class="blog-card" data-cat="tips">
-          <div class="blog-card-image">❄️</div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-cat tips">RV Tips</span>
-              <span class="blog-date">Nov 12, 2024</span>
-            </div>
-            <h3>Winterizing Dorey: A Step-by-Step Checklist That Won't Leave You Crying in Spring</h3>
-            <p>The complete guide to winterizing a 25-foot travel trailer — the right order, the right tools, and yes, that one valve everyone forgets.</p>
-            <span class="read-more">Read more →</span>
-          </div>
-        </a>
-
-        <a href="blog/kids-and-rv-packing.html" class="blog-card" data-cat="tips">
-          <div class="blog-card-image">🎒</div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-cat tips">RV Tips</span>
-              <span class="blog-date">Sep 3, 2024</span>
-            </div>
-            <h3>Packing 3 Kids for an RV Trip Without Losing Your Mind (or Your Storage Space)</h3>
-            <p>Our battle-tested packing system for small humans. One carry-on rule, the toy audit, and why we banned stuffed animals on road trips.</p>
-            <span class="read-more">Read more →</span>
-          </div>
-        </a>
-
-        <!-- REVIEWS -->
-        <a href="blog/campground-review-zion.html" class="blog-card" data-cat="reviews">
-          <div class="blog-card-image">🏜️</div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-cat reviews">Campground Review</span>
-              <span class="blog-date">Dec 5, 2024</span>
-            </div>
-            <h3>Zion Canyon Campground Review — Worth the Hype?</h3>
-            <p>We spent four nights at Watchman Campground. Hookups, spacing, noise levels, and the view at sunrise — all the details.</p>
-            <span class="read-more">Read more →</span>
-          </div>
-        </a>
-
-        <a href="blog/product-review-dometic-fridge.html" class="blog-card" data-cat="reviews">
-          <div class="blog-card-image">🧊</div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-cat reviews">Product Review</span>
-              <span class="blog-date">Aug 18, 2024</span>
-            </div>
-            <h3>Dometic CFX3 55 Review: Is This Fridge Worth $900?</h3>
-            <p>After 8 months and 12,000 miles, here's my honest take on the most popular RV fridge on the market.</p>
-            <span class="read-more">Read more →</span>
-          </div>
-        </a>
-
-        <!-- GEAR -->
-        <a href="blog/solar-setup-guide.html" class="blog-card" data-cat="gear">
-          <div class="blog-card-image">☀️</div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-cat gear">Gear &amp; Tech</span>
-              <span class="blog-date">Jun 22, 2024</span>
-            </div>
-            <h3>400W Solar + LiFePO4 Battery Setup for a 25-Foot Travel Trailer</h3>
-            <p>The full walkthrough of our off-grid power system — panels, charge controller, batteries, inverter — and what I'd do differently.</p>
-            <span class="read-more">Read more →</span>
-          </div>
-        </a>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════ FOOTER ══════════════════════ -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo-link">
-            <img src="images/logo.svg" alt="The Rugged Nerd" width="160" height="36" />
-          </a>
-          <p>Where wilderness meets technology. A family's guide to adventuring with purpose — and good Wi-Fi.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigate</h4>
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="resources.html">Resources</a></li>
             <li><a href="photos.html">Photos</a></li>
           </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Blog Topics</h4>
-          <ul>
-            <li><a href="blog.html?cat=trips">Trip Reports</a></li>
-            <li><a href="blog.html?cat=tips">RV Tips</a></li>
-            <li><a href="blog.html?cat=reviews">Reviews</a></li>
-            <li><a href="blog.html?cat=gear">Gear &amp; Tech</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Downloads</h4>
-          <ul>
-            <li><a href="assets/downloads/packing-checklist-family.pdf">Packing Checklist</a></li>
-            <li><a href="assets/downloads/pre-departure-full.pdf">Pre-Departure</a></li>
-            <li><a href="assets/downloads/maintenance-log-trailer.pdf">Maintenance Log</a></li>
-            <li><a href="assets/downloads/travel-log-trip.pdf">Travel Log</a></li>
-          </ul>
-        </div>
+        </nav>
+        <button
+          class="nav-toggle"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span></span><span></span><span></span>
+        </button>
       </div>
-      <div class="footer-bottom">
-        <span class="footer-copy">© 2025 The Rugged Nerd · theruggednerd.com · All rights reserved</span>
-        <span class="footer-tagline"><span class="dot"></span>Built by a nerd. Tested in the wild.</span>
+    </header>
+
+    <!-- ══════════════════════ PAGE HEADER ══════════════════════ -->
+    <div class="page-header">
+      <div class="container">
+        <p
+          class="section-eyebrow"
+          style="
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+          "
+        >
+          <span
+            style="
+              font-family: var(--font-mono);
+              font-size: 0.78rem;
+              letter-spacing: 0.2em;
+              color: var(--color-text-faint);
+            "
+            >// trail log</span
+          >
+        </p>
+        <h1>The Blog</h1>
+        <p class="page-subtitle">
+          Trip reports, RV tips, campground reviews, gear guides, and everything
+          in between — straight from the campfire to your screen.
+        </p>
       </div>
     </div>
-  </footer>
 
-  <script src="js/main.js"></script>
-</body>
+    <!-- ══════════════════════ BLOG CONTENT ══════════════════════ -->
+    <section class="blog-section">
+      <div class="container">
+        <!-- Category Filters -->
+        <div
+          class="cat-filters"
+          role="group"
+          aria-label="Filter posts by category"
+        >
+          <button class="cat-btn active" data-filter="all">All Posts</button>
+          <button class="cat-btn" data-filter="trips">🗺 Trips</button>
+          <button class="cat-btn" data-filter="tips">💡 RV Tips</button>
+          <button class="cat-btn" data-filter="reviews">⭐ Reviews</button>
+          <button class="cat-btn" data-filter="gear">🔧 Gear &amp; Tech</button>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="blog-grid">
+          <!-- TRIPS -->
+          <a
+            href="blog/rocky-mountain-trip.html"
+            class="blog-card"
+            data-cat="trips"
+          >
+            <div class="blog-card-image">🏔️</div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-cat trips">Trips</span>
+                <span class="blog-date">Feb 14, 2025</span>
+              </div>
+              <h3>
+                Rocky Mountain High: 10 Days in Colorado with 3 Kids &amp; 2
+                Dogs
+              </h3>
+              <p>
+                We pointed Blue west and didn't look back. Here's everything
+                that went right (and a few things that didn't) on our longest
+                trip yet.
+              </p>
+              <span class="read-more">Read more →</span>
+            </div>
+          </a>
+
+          <a
+            href="blog/smoky-mountains.html"
+            class="blog-card"
+            data-cat="trips"
+          >
+            <div class="blog-card-image">🌫️</div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-cat trips">Trips</span>
+                <span class="blog-date">Oct 8, 2024</span>
+              </div>
+              <h3>Smoky Mountain Shakedown: Our First Big Trip in Dorey</h3>
+              <p>
+                Nothing breaks in a new trailer like an ambitious first trip
+                through the Smokies in October. Spoiler: the water heater won.
+              </p>
+              <span class="read-more">Read more →</span>
+            </div>
+          </a>
+
+          <a
+            href="blog/pacific-coast-highway.html"
+            class="blog-card"
+            data-cat="trips"
+          >
+            <div class="blog-card-image">🌊</div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-cat trips">Trips</span>
+                <span class="blog-date">Jul 4, 2024</span>
+              </div>
+              <h3>
+                Pacific Coast Highway in a 25-Footer: Tips, Pullouts, and Pure
+                Awe
+              </h3>
+              <p>
+                PCH in a travel trailer sounds crazy. We tried it anyway. Here's
+                what we wish we'd known before mile 1.
+              </p>
+              <span class="read-more">Read more →</span>
+            </div>
+          </a>
+
+          <!-- TIPS -->
+          <a href="blog/rv-wifi-setup.html" class="blog-card" data-cat="tips">
+            <div class="blog-card-image">📡</div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-cat tips">RV Tips</span>
+                <span class="blog-date">Jan 20, 2025</span>
+              </div>
+              <h3>
+                The Rugged Nerd's Guide to Full-Time RV Wi-Fi That Actually
+                Works
+              </h3>
+              <p>
+                From cellular boosters to Starlink integration — the complete
+                setup I use to stay connected from the backcountry.
+              </p>
+              <span class="read-more">Read more →</span>
+            </div>
+          </a>
+
+          <a
+            href="blog/trailer-winterization.html"
+            class="blog-card"
+            data-cat="tips"
+          >
+            <div class="blog-card-image">❄️</div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-cat tips">RV Tips</span>
+                <span class="blog-date">Nov 12, 2024</span>
+              </div>
+              <h3>
+                Winterizing Dorey: A Step-by-Step Checklist That Won't Leave You
+                Crying in Spring
+              </h3>
+              <p>
+                The complete guide to winterizing a 25-foot travel trailer — the
+                right order, the right tools, and yes, that one valve everyone
+                forgets.
+              </p>
+              <span class="read-more">Read more →</span>
+            </div>
+          </a>
+
+          <a
+            href="blog/kids-and-rv-packing.html"
+            class="blog-card"
+            data-cat="tips"
+          >
+            <div class="blog-card-image">🎒</div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-cat tips">RV Tips</span>
+                <span class="blog-date">Sep 3, 2024</span>
+              </div>
+              <h3>
+                Packing 3 Kids for an RV Trip Without Losing Your Mind (or Your
+                Storage Space)
+              </h3>
+              <p>
+                Our battle-tested packing system for small humans. One carry-on
+                rule, the toy audit, and why we banned stuffed animals on road
+                trips.
+              </p>
+              <span class="read-more">Read more →</span>
+            </div>
+          </a>
+
+          <!-- REVIEWS -->
+          <a
+            href="blog/campground-review-zion.html"
+            class="blog-card"
+            data-cat="reviews"
+          >
+            <div class="blog-card-image">🏜️</div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-cat reviews">Campground Review</span>
+                <span class="blog-date">Dec 5, 2024</span>
+              </div>
+              <h3>Zion Canyon Campground Review — Worth the Hype?</h3>
+              <p>
+                We spent four nights at Watchman Campground. Hookups, spacing,
+                noise levels, and the view at sunrise — all the details.
+              </p>
+              <span class="read-more">Read more →</span>
+            </div>
+          </a>
+
+          <a
+            href="blog/product-review-dometic-fridge.html"
+            class="blog-card"
+            data-cat="reviews"
+          >
+            <div class="blog-card-image">🧊</div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-cat reviews">Product Review</span>
+                <span class="blog-date">Aug 18, 2024</span>
+              </div>
+              <h3>Dometic CFX3 55 Review: Is This Fridge Worth $900?</h3>
+              <p>
+                After 8 months and 12,000 miles, here's my honest take on the
+                most popular RV fridge on the market.
+              </p>
+              <span class="read-more">Read more →</span>
+            </div>
+          </a>
+
+          <!-- GEAR -->
+          <a
+            href="blog/solar-setup-guide.html"
+            class="blog-card"
+            data-cat="gear"
+          >
+            <div class="blog-card-image">☀️</div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-cat gear">Gear &amp; Tech</span>
+                <span class="blog-date">Jun 22, 2024</span>
+              </div>
+              <h3>
+                400W Solar + LiFePO4 Battery Setup for a 25-Foot Travel Trailer
+              </h3>
+              <p>
+                The full walkthrough of our off-grid power system — panels,
+                charge controller, batteries, inverter — and what I'd do
+                differently.
+              </p>
+              <span class="read-more">Read more →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ FOOTER ══════════════════════ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo-link">
+              <img
+                src="images/shield.png"
+                alt="The Rugged Nerd"
+                width="60"
+                height="60"
+              />
+            </a>
+            <p>
+              Where wilderness meets technology. A family's guide to adventuring
+              with purpose — and good Wi-Fi.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="photos.html">Photos</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Blog Topics</h4>
+            <ul>
+              <li><a href="blog.html?cat=trips">Trip Reports</a></li>
+              <li><a href="blog.html?cat=tips">RV Tips</a></li>
+              <li><a href="blog.html?cat=reviews">Reviews</a></li>
+              <li><a href="blog.html?cat=gear">Gear &amp; Tech</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Downloads</h4>
+            <ul>
+              <li>
+                <a href="assets/downloads/packing-checklist-family.pdf"
+                  >Packing Checklist</a
+                >
+              </li>
+              <li>
+                <a href="assets/downloads/pre-departure-full.pdf"
+                  >Pre-Departure</a
+                >
+              </li>
+              <li>
+                <a href="assets/downloads/maintenance-log-trailer.pdf"
+                  >Maintenance Log</a
+                >
+              </li>
+              <li>
+                <a href="assets/downloads/travel-log-trip.pdf">Travel Log</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-copy"
+            >© 2025 The Rugged Nerd · theruggednerd.com · All rights
+            reserved</span
+          >
+          <span class="footer-tagline"
+            ><span class="dot"></span>Built by a nerd. Tested in the wild.</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>

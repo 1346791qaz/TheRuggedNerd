@@ -1,268 +1,356 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The Rugged Nerd — Where wilderness meets technology. Follow the adventures of a tech-loving family exploring the great outdoors in their 25-foot travel trailer Dorey." />
-  <title>The Rugged Nerd — Where Wilderness Meets Technology</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <!-- Favicon placeholder -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪓</text></svg>" />
-</head>
-<body>
-
-  <!-- ══════════════════════ HEADER ══════════════════════ -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo-link" aria-label="The Rugged Nerd — Home">
-        <img src="images/logo.svg" alt="The Rugged Nerd" width="180" height="44" />
-      </a>
-
-      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="photos.html">Photos</a></li>
-        </ul>
-      </nav>
-
-      <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- ══════════════════════ HERO ══════════════════════ -->
-  <section class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="container">
-      <div class="hero-content">
-        <p class="hero-eyebrow">theruggednerd.com</p>
-        <h1>
-          Life's Better<br />
-          <span class="accent-wood">Off&nbsp;the&nbsp;Grid</span><br />
-          <span class="accent-green">Plugged&nbsp;In</span>
-        </h1>
-        <p class="hero-desc">
-          One family. One truck named Blue. One trailer named Dorey. Infinite adventures.
-          We're a tech-loving, trail-blazing crew documenting every campfire story, 
-          back-road discovery, and gear hack — straight from the wilderness to your screen.
-        </p>
-        <div class="hero-actions">
-          <a href="blog.html" class="btn btn-primary">Read the Blog</a>
-          <a href="#family" class="btn btn-outline">Meet the Crew</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════ STATS BAR ══════════════════════ -->
-  <div class="container">
-    <div class="stats-bar">
-      <div class="stat-item">
-        <span class="stat-number">25<span style="font-size:1.2rem">ft</span></span>
-        <span class="stat-label">Travel Trailer<br/>"Dorey"</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">7</span>
-        <span class="stat-label">Family Members<br/>(counting the dogs)</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">∞</span>
-        <span class="stat-label">Miles to Explore</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">1</span>
-        <span class="stat-label">Rugged Nerd<br/>Behind the Wheel</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════ FAMILY SECTION ══════════════════════ -->
-  <section id="family" class="family-section">
-    <div class="container">
-      <div class="family-grid">
-        <div class="family-image-block">
-          <div class="family-placeholder-img">
-            <span class="placeholder-icon">🏕️</span>
-            <span style="padding: 0 1.5rem;">Family photo coming soon<br/><span style="opacity:.6">Blue + Dorey included</span></span>
-          </div>
-        </div>
-
-        <div class="family-text">
-          <p class="section-eyebrow">// meet the crew</p>
-          <h2>The Rugged Nerd Crew</h2>
-
-          <p>
-            I'm The Rugged Nerd — a tech enthusiast who swapped the office for open roads.
-            Together with my amazing wife, our three wild kids, and our two loyal dogs, 
-            we load up our trusty truck <strong>Blue</strong> and our 25-foot travel trailer 
-            <strong>Dorey</strong> to explore everything from mountain switchbacks to 
-            coastal hideaways.
-          </p>
-
-          <p>
-            This site is our field manual: real trip reports, hard-won RV tips, 
-            honest gear reviews, and all the downloads you need to make your own 
-            adventures less chaotic and more legendary.
-          </p>
-
-          <div class="family-tags">
-            <span class="family-tag wood">👩 Wife</span>
-            <span class="family-tag green">👦 Kid #1</span>
-            <span class="family-tag green">👦 Kid #2</span>
-            <span class="family-tag green">👧 Kid #3</span>
-            <span class="family-tag wood">🐕 Dog #1</span>
-            <span class="family-tag wood">🐕 Dog #2</span>
-            <span class="family-tag ember">🛻 Blue</span>
-            <span class="family-tag ember">🚌 Dorey (25ft)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════ FEATURES ══════════════════════ -->
-  <section class="features-section">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">// what you'll find here</p>
-        <h2 class="section-title">Your Adventure <span class="accent">Command Center</span></h2>
-        <div class="section-divider"></div>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <span class="feature-icon">📖</span>
-          <h3>Blog</h3>
-          <p>Trip reports, campground reviews, RV tips, gear breakdowns, and everything in between.</p>
-          <a href="blog.html" class="feature-link">Explore posts</a>
-        </div>
-        <div class="feature-card">
-          <span class="feature-icon">📥</span>
-          <h3>Resources</h3>
-          <p>Free downloads: packing checklists, maintenance logs, pre-departure checklists, travel logs.</p>
-          <a href="resources.html" class="feature-link">Get downloads</a>
-        </div>
-        <div class="feature-card">
-          <span class="feature-icon">📷</span>
-          <h3>Photos</h3>
-          <p>A growing library of our adventures — sunrises at camp, mountain passes, and family moments.</p>
-          <a href="photos.html" class="feature-link">View gallery</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════ RECENT BLOG POSTS ══════════════════════ -->
-  <section class="blog-section">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">// latest dispatches</p>
-        <h2 class="section-title">From the <span class="accent">Trail Log</span></h2>
-        <div class="section-divider"></div>
-      </div>
-
-      <div class="blog-grid">
-
-        <a href="blog/rocky-mountain-trip.html" class="blog-card" data-cat="trips">
-          <div class="blog-card-image">🏔️</div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-cat trips">Trips</span>
-              <span class="blog-date">Feb 2025</span>
-            </div>
-            <h3>Rocky Mountain High: 10 Days in Colorado with 3 Kids &amp; 2 Dogs</h3>
-            <p>We pointed Blue west and didn't look back. Here's everything that went right (and a few things that didn't) on our longest trip yet.</p>
-            <span class="read-more">Read more →</span>
-          </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Rugged Nerd — Where wilderness meets technology. Follow the adventures of a tech-loving family exploring the great outdoors in their 25-foot travel trailer Dorey."
+    />
+    <title>The Rugged Nerd — Where Wilderness Meets Technology</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Favicon placeholder -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪓</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- ══════════════════════ HEADER ══════════════════════ -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a
+          href="index.html"
+          class="logo-link"
+          aria-label="The Rugged Nerd — Home"
+        >
+          <img
+            src="images/shield.png"
+            alt="The Rugged Nerd"
+            width="60"
+            height="60"
+          />
         </a>
 
-        <a href="blog/rv-wifi-setup.html" class="blog-card" data-cat="tips">
-          <div class="blog-card-image">📡</div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-cat tips">RV Tips</span>
-              <span class="blog-date">Jan 2025</span>
-            </div>
-            <h3>The Rugged Nerd's Guide to Full-Time RV Wi-Fi That Actually Works</h3>
-            <p>From cellular boosters to Starlink integration — the complete setup I use to stay connected from the backcountry.</p>
-            <span class="read-more">Read more →</span>
-          </div>
-        </a>
-
-        <a href="blog/campground-review-zion.html" class="blog-card" data-cat="reviews">
-          <div class="blog-card-image">🏜️</div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-cat reviews">Campground Review</span>
-              <span class="blog-date">Dec 2024</span>
-            </div>
-            <h3>Zion Canyon Campground Review — Worth the Hype?</h3>
-            <p>We spent four nights at Watchman Campground. Hookups, spacing, noise levels, and the view at sunrise — all the details.</p>
-            <span class="read-more">Read more →</span>
-          </div>
-        </a>
-
-      </div>
-
-      <div style="text-align:center; margin-top: 2.5rem;">
-        <a href="blog.html" class="btn btn-outline">All Posts →</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════ FOOTER ══════════════════════ -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo-link">
-            <img src="images/logo.svg" alt="The Rugged Nerd" width="160" height="36" />
-          </a>
-          <p>Where wilderness meets technology. A family's guide to adventuring with purpose — and good Wi-Fi.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigate</h4>
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="resources.html">Resources</a></li>
             <li><a href="photos.html">Photos</a></li>
           </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Blog Topics</h4>
-          <ul>
-            <li><a href="blog.html?cat=trips">Trip Reports</a></li>
-            <li><a href="blog.html?cat=tips">RV Tips</a></li>
-            <li><a href="blog.html?cat=reviews">Reviews</a></li>
-            <li><a href="blog.html?cat=gear">Gear &amp; Tech</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Downloads</h4>
-          <ul>
-            <li><a href="assets/downloads/packing-checklist-family.pdf">Packing Checklist</a></li>
-            <li><a href="assets/downloads/pre-departure-full.pdf">Pre-Departure</a></li>
-            <li><a href="assets/downloads/maintenance-log-trailer.pdf">Maintenance Log</a></li>
-            <li><a href="assets/downloads/travel-log-trip.pdf">Travel Log</a></li>
-          </ul>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ══════════════════════ HERO ══════════════════════ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-eyebrow">theruggednerd.com</p>
+          <h1>
+            Life's Better<br />
+            <span class="accent-wood">Off&nbsp;the&nbsp;Grid</span><br />
+            <span class="accent-green">Plugged&nbsp;In</span>
+          </h1>
+          <p class="hero-desc">
+            One family. One truck named Blue. One trailer named Dorey. Infinite
+            adventures. We're a tech-loving, trail-blazing crew documenting
+            every campfire story, back-road discovery, and gear hack — straight
+            from the wilderness to your screen.
+          </p>
+          <div class="hero-actions">
+            <a href="blog.html" class="btn btn-primary">Read the Blog</a>
+            <a href="#family" class="btn btn-outline">Meet the Crew</a>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="footer-bottom">
-        <span class="footer-copy">© 2025 The Rugged Nerd · theruggednerd.com · All rights reserved</span>
-        <span class="footer-tagline">
-          <span class="dot"></span>
-          Built by a nerd. Tested in the wild.
-        </span>
+    <!-- ══════════════════════ STATS BAR ══════════════════════ -->
+    <div class="container">
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-number"
+            >25<span style="font-size: 1.2rem">ft</span></span
+          >
+          <span class="stat-label">Travel Trailer<br />"Dorey"</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">7</span>
+          <span class="stat-label"
+            >Family Members<br />(counting the dogs)</span
+          >
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Miles to Explore</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">1</span>
+          <span class="stat-label">Rugged Nerd<br />Behind the Wheel</span>
+        </div>
       </div>
     </div>
-  </footer>
 
-  <script src="js/main.js"></script>
-</body>
+    <!-- ══════════════════════ FAMILY SECTION ══════════════════════ -->
+    <section id="family" class="family-section">
+      <div class="container">
+        <div class="family-grid">
+          <div class="family-image-block">
+            <div class="family-placeholder-img">
+              <span class="placeholder-icon">🏕️</span>
+              <span style="padding: 0 1.5rem"
+                >Family photo coming soon<br /><span style="opacity: 0.6"
+                  >Blue + Dorey included</span
+                ></span
+              >
+            </div>
+          </div>
+
+          <div class="family-text">
+            <p class="section-eyebrow">// meet the crew</p>
+            <h2>The Rugged Nerd Crew</h2>
+
+            <p>
+              I'm The Rugged Nerd — a tech enthusiast who swapped the office for
+              open roads. Together with my amazing wife, our three wild kids,
+              and our two loyal dogs, we load up our trusty truck
+              <strong>Blue</strong> and our 25-foot travel trailer
+              <strong>Dorey</strong> to explore everything from mountain
+              switchbacks to coastal hideaways.
+            </p>
+
+            <p>
+              This site is our field manual: real trip reports, hard-won RV
+              tips, honest gear reviews, and all the downloads you need to make
+              your own adventures less chaotic and more legendary.
+            </p>
+
+            <div class="family-tags">
+              <span class="family-tag wood">👩 Wife</span>
+              <span class="family-tag green">👦 Kid #1</span>
+              <span class="family-tag green">👦 Kid #2</span>
+              <span class="family-tag green">👧 Kid #3</span>
+              <span class="family-tag wood">🐕 Dog #1</span>
+              <span class="family-tag wood">🐕 Dog #2</span>
+              <span class="family-tag ember">🛻 Blue</span>
+              <span class="family-tag ember">🚌 Dorey (25ft)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ FEATURES ══════════════════════ -->
+    <section class="features-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">// what you'll find here</p>
+          <h2 class="section-title">
+            Your Adventure <span class="accent">Command Center</span>
+          </h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <span class="feature-icon">📖</span>
+            <h3>Blog</h3>
+            <p>
+              Trip reports, campground reviews, RV tips, gear breakdowns, and
+              everything in between.
+            </p>
+            <a href="blog.html" class="feature-link">Explore posts</a>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">📥</span>
+            <h3>Resources</h3>
+            <p>
+              Free downloads: packing checklists, maintenance logs,
+              pre-departure checklists, travel logs.
+            </p>
+            <a href="resources.html" class="feature-link">Get downloads</a>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">📷</span>
+            <h3>Photos</h3>
+            <p>
+              A growing library of our adventures — sunrises at camp, mountain
+              passes, and family moments.
+            </p>
+            <a href="photos.html" class="feature-link">View gallery</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ RECENT BLOG POSTS ══════════════════════ -->
+    <section class="blog-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">// latest dispatches</p>
+          <h2 class="section-title">
+            From the <span class="accent">Trail Log</span>
+          </h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="blog-grid">
+          <a
+            href="blog/rocky-mountain-trip.html"
+            class="blog-card"
+            data-cat="trips"
+          >
+            <div class="blog-card-image">🏔️</div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-cat trips">Trips</span>
+                <span class="blog-date">Feb 2025</span>
+              </div>
+              <h3>
+                Rocky Mountain High: 10 Days in Colorado with 3 Kids &amp; 2
+                Dogs
+              </h3>
+              <p>
+                We pointed Blue west and didn't look back. Here's everything
+                that went right (and a few things that didn't) on our longest
+                trip yet.
+              </p>
+              <span class="read-more">Read more →</span>
+            </div>
+          </a>
+
+          <a href="blog/rv-wifi-setup.html" class="blog-card" data-cat="tips">
+            <div class="blog-card-image">📡</div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-cat tips">RV Tips</span>
+                <span class="blog-date">Jan 2025</span>
+              </div>
+              <h3>
+                The Rugged Nerd's Guide to Full-Time RV Wi-Fi That Actually
+                Works
+              </h3>
+              <p>
+                From cellular boosters to Starlink integration — the complete
+                setup I use to stay connected from the backcountry.
+              </p>
+              <span class="read-more">Read more →</span>
+            </div>
+          </a>
+
+          <a
+            href="blog/campground-review-zion.html"
+            class="blog-card"
+            data-cat="reviews"
+          >
+            <div class="blog-card-image">🏜️</div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-cat reviews">Campground Review</span>
+                <span class="blog-date">Dec 2024</span>
+              </div>
+              <h3>Zion Canyon Campground Review — Worth the Hype?</h3>
+              <p>
+                We spent four nights at Watchman Campground. Hookups, spacing,
+                noise levels, and the view at sunrise — all the details.
+              </p>
+              <span class="read-more">Read more →</span>
+            </div>
+          </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem">
+          <a href="blog.html" class="btn btn-outline">All Posts →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ FOOTER ══════════════════════ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo-link">
+              <img
+                src="images/shield.png"
+                alt="The Rugged Nerd"
+                width="60"
+                height="60"
+              />
+            </a>
+            <p>
+              Where wilderness meets technology. A family's guide to adventuring
+              with purpose — and good Wi-Fi.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="photos.html">Photos</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Blog Topics</h4>
+            <ul>
+              <li><a href="blog.html?cat=trips">Trip Reports</a></li>
+              <li><a href="blog.html?cat=tips">RV Tips</a></li>
+              <li><a href="blog.html?cat=reviews">Reviews</a></li>
+              <li><a href="blog.html?cat=gear">Gear &amp; Tech</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Downloads</h4>
+            <ul>
+              <li>
+                <a href="assets/downloads/packing-checklist-family.pdf"
+                  >Packing Checklist</a
+                >
+              </li>
+              <li>
+                <a href="assets/downloads/pre-departure-full.pdf"
+                  >Pre-Departure</a
+                >
+              </li>
+              <li>
+                <a href="assets/downloads/maintenance-log-trailer.pdf"
+                  >Maintenance Log</a
+                >
+              </li>
+              <li>
+                <a href="assets/downloads/travel-log-trip.pdf">Travel Log</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span class="footer-copy"
+            >© 2025 The Rugged Nerd · theruggednerd.com · All rights
+            reserved</span
+          >
+          <span class="footer-tagline">
+            <span class="dot"></span>
+            Built by a nerd. Tested in the wild.
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>

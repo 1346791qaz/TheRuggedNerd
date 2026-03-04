@@ -1,363 +1,704 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The Rugged Nerd Photos — Browse our adventure photo library: national parks, campgrounds, road trips, and family moments from the trail." />
-  <title>Photos — The Rugged Nerd</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪓</text></svg>" />
-  <style>
-    /* Photos-page–specific tweaks */
-    .photo-item.wide  { grid-column: span 2; }
-    .photo-item.tall  { grid-row:    span 2; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Rugged Nerd Photos — Browse our adventure photo library: national parks, campgrounds, road trips, and family moments from the trail."
+    />
+    <title>Photos — The Rugged Nerd</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪓</text></svg>"
+    />
+    <style>
+      /* Photos-page–specific tweaks */
+      .photo-item.wide {
+        grid-column: span 2;
+      }
+      .photo-item.tall {
+        grid-row: span 2;
+      }
 
-    @media (max-width: 640px) {
-      .photo-item.wide { grid-column: span 1; }
-      .photo-item.tall { grid-row:    span 1; }
-    }
+      @media (max-width: 640px) {
+        .photo-item.wide {
+          grid-column: span 1;
+        }
+        .photo-item.tall {
+          grid-row: span 1;
+        }
+      }
 
-    .album-section { margin-bottom: 4rem; }
+      .album-section {
+        margin-bottom: 4rem;
+      }
 
-    .coming-soon-banner {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: var(--color-bg-card);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      margin-top: 2rem;
-    }
+      .coming-soon-banner {
+        text-align: center;
+        padding: 4rem 2rem;
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        margin-top: 2rem;
+      }
 
-    .coming-soon-banner .big-icon {
-      font-size: 4rem;
-      display: block;
-      margin-bottom: 1rem;
-    }
+      .coming-soon-banner .big-icon {
+        font-size: 4rem;
+        display: block;
+        margin-bottom: 1rem;
+      }
 
-    .coming-soon-banner p {
-      color: var(--color-text-muted);
-      max-width: 440px;
-      margin: .5rem auto 0;
-      font-size: .95rem;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- ══════════════════════ HEADER ══════════════════════ -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo-link" aria-label="The Rugged Nerd — Home">
-        <img src="images/logo.svg" alt="The Rugged Nerd" width="180" height="44" />
-      </a>
-      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="photos.html">Photos</a></li>
-        </ul>
-      </nav>
-      <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- ══════════════════════ PAGE HEADER ══════════════════════ -->
-  <div class="page-header">
-    <div class="container">
-      <p class="section-eyebrow" style="justify-content:center; display:flex; align-items:center; gap:.5rem; margin-bottom:.75rem;">
-        <span style="font-family:var(--font-mono); font-size:.78rem; letter-spacing:.2em; color:var(--color-text-faint);">// adventure gallery</span>
-      </p>
-      <h1>Photo Library</h1>
-      <p class="page-subtitle">Moments captured from the road — mountains, deserts, forests, campfires, and the crew that makes it all worth it.</p>
-    </div>
-  </div>
-
-  <!-- ══════════════════════ PHOTO CONTENT ══════════════════════ -->
-  <section class="photos-section">
-    <div class="container">
-
-      <!-- Album tabs -->
-      <div class="album-tabs" role="group" aria-label="Photo albums">
-        <button class="cat-btn active" data-filter="all">All Photos</button>
-        <button class="cat-btn" data-filter="landscapes">🏔 Landscapes</button>
-        <button class="cat-btn" data-filter="camplife">🔥 Camp Life</button>
-        <button class="cat-btn" data-filter="family">👨‍👩‍👧‍👦 Family</button>
-        <button class="cat-btn" data-filter="rig">🚌 The Rig</button>
-      </div>
-
-      <!-- ── Landscapes ── -->
-      <div class="album-section">
-        <div class="section-header" style="margin-bottom: 1.5rem;">
-          <h2 class="section-title" style="font-size: 1.5rem;">🏔 Landscapes</h2>
-        </div>
-        <div class="photo-grid">
-
-          <div class="photo-item wide" data-caption="Rocky Mountain Sunrise" data-icon="🏔️" data-sub="Rocky Mountain National Park · Feb 2025" data-cat="landscapes">
-            <div class="photo-placeholder" style="aspect-ratio: 21/9;">
-              🏔️
-              <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--color-text-faint); margin-top:.25rem;">Rocky Mountain Sunrise</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-caption">
-                Rocky Mountain Sunrise
-                <span>Rocky Mountain NP · Feb 2025</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="photo-item" data-caption="Zion Canyon at Dusk" data-icon="🏜️" data-sub="Zion National Park · Dec 2024" data-cat="landscapes">
-            <div class="photo-placeholder">
-              🏜️
-              <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--color-text-faint); margin-top:.25rem;">Zion Canyon at Dusk</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-caption">
-                Zion Canyon at Dusk
-                <span>Zion National Park · Dec 2024</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="photo-item" data-caption="Smoky Mountain Mist" data-icon="🌫️" data-sub="Great Smoky Mountains · Oct 2024" data-cat="landscapes">
-            <div class="photo-placeholder">
-              🌫️
-              <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--color-text-faint); margin-top:.25rem;">Smoky Mountain Mist</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-caption">
-                Smoky Mountain Mist
-                <span>Great Smoky Mountains · Oct 2024</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="photo-item" data-caption="Pacific Coast Lookout" data-icon="🌊" data-sub="PCH · Jul 2024" data-cat="landscapes">
-            <div class="photo-placeholder">
-              🌊
-              <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--color-text-faint); margin-top:.25rem;">Pacific Coast Lookout</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-caption">
-                Pacific Coast Lookout
-                <span>PCH · Jul 2024</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="photo-item" data-caption="High Desert Stars" data-icon="🌌" data-sub="Utah Backcountry · Aug 2024" data-cat="landscapes">
-            <div class="photo-placeholder">
-              🌌
-              <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--color-text-faint); margin-top:.25rem;">High Desert Stars</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-caption">
-                High Desert Stars
-                <span>Utah Backcountry · Aug 2024</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ── Camp Life ── -->
-      <div class="album-section">
-        <div class="section-header" style="margin-bottom: 1.5rem;">
-          <h2 class="section-title" style="font-size: 1.5rem;">🔥 Camp Life</h2>
-        </div>
-        <div class="photo-grid">
-
-          <div class="photo-item" data-caption="Morning Coffee Ritual" data-icon="☕" data-sub="Wherever we parked" data-cat="camplife">
-            <div class="photo-placeholder">
-              ☕
-              <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--color-text-faint); margin-top:.25rem;">Morning Coffee Ritual</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-caption">Morning Coffee Ritual<span>Every single morning</span></div>
-            </div>
-          </div>
-
-          <div class="photo-item" data-caption="Campfire Council" data-icon="🔥" data-sub="Watchman Campground, Zion · Dec 2024" data-cat="camplife">
-            <div class="photo-placeholder">
-              🔥
-              <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--color-text-faint); margin-top:.25rem;">Campfire Council</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-caption">Campfire Council<span>Watchman Campground · Dec 2024</span></div>
-            </div>
-          </div>
-
-          <div class="photo-item" data-caption="Dorey Setup at Golden Hour" data-icon="🌅" data-sub="Colorado campsite · Feb 2025" data-cat="camplife">
-            <div class="photo-placeholder">
-              🌅
-              <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--color-text-faint); margin-top:.25rem;">Dorey at Golden Hour</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-caption">Dorey at Golden Hour<span>Colorado · Feb 2025</span></div>
-            </div>
-          </div>
-
-          <div class="photo-item" data-caption="Solar Array Online" data-icon="☀️" data-sub="Off-grid boondocking · Jun 2024" data-cat="camplife">
-            <div class="photo-placeholder">
-              ☀️
-              <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--color-text-faint); margin-top:.25rem;">Solar Array Online</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-caption">Solar Array Online<span>Off-grid boondocking · Jun 2024</span></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ── Family ── -->
-      <div class="album-section">
-        <div class="section-header" style="margin-bottom: 1.5rem;">
-          <h2 class="section-title" style="font-size: 1.5rem;">👨‍👩‍👧‍👦 Family</h2>
-        </div>
-        <div class="photo-grid">
-
-          <div class="photo-item" data-caption="The Whole Crew" data-icon="👨‍👩‍👧‍👦" data-sub="Somewhere epic" data-cat="family">
-            <div class="photo-placeholder">
-              👨‍👩‍👧‍👦
-              <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--color-text-faint); margin-top:.25rem;">The Whole Crew</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-caption">The Whole Crew<span>Somewhere epic</span></div>
-            </div>
-          </div>
-
-          <div class="photo-item" data-caption="Kid #1 Summit" data-icon="🧗" data-sub="Rocky Mountain NP · Feb 2025" data-cat="family">
-            <div class="photo-placeholder">
-              🧗
-              <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--color-text-faint); margin-top:.25rem;">Summit Day</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-caption">Summit Day<span>Rocky Mountain NP · Feb 2025</span></div>
-            </div>
-          </div>
-
-          <div class="photo-item" data-caption="The Dogs on Patrol" data-icon="🐕" data-sub="Every campsite ever" data-cat="family">
-            <div class="photo-placeholder">
-              🐕
-              <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--color-text-faint); margin-top:.25rem;">The Dogs on Patrol</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-caption">The Dogs on Patrol<span>Every campsite, ever</span></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ── The Rig ── -->
-      <div class="album-section">
-        <div class="section-header" style="margin-bottom: 1.5rem;">
-          <h2 class="section-title" style="font-size: 1.5rem;">🚌 The Rig</h2>
-        </div>
-        <div class="photo-grid">
-
-          <div class="photo-item" data-caption="Blue &amp; Dorey Hitched Up" data-icon="🛻" data-sub="Pre-departure morning" data-cat="rig">
-            <div class="photo-placeholder">
-              🛻
-              <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--color-text-faint); margin-top:.25rem;">Blue &amp; Dorey Ready to Roll</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-caption">Blue &amp; Dorey Ready to Roll<span>Pre-departure morning</span></div>
-            </div>
-          </div>
-
-          <div class="photo-item" data-caption="Interior — The Nerd Station" data-icon="💻" data-sub="Dorey's cockpit" data-cat="rig">
-            <div class="photo-placeholder">
-              💻
-              <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--color-text-faint); margin-top:.25rem;">The Nerd Station</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-caption">The Nerd Station<span>Dorey's cockpit — where the work happens</span></div>
-            </div>
-          </div>
-
-          <div class="photo-item" data-caption="Blue on a Mountain Pass" data-icon="🏔️" data-sub="Colorado · Feb 2025" data-cat="rig">
-            <div class="photo-placeholder">
-              🏔️🛻
-              <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--color-text-faint); margin-top:.25rem;">Blue on the Pass</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-caption">Blue on the Pass<span>Colorado · Feb 2025</span></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- More photos note -->
-      <div class="coming-soon-banner">
-        <span class="big-icon">📸</span>
-        <h3 style="font-family:var(--font-heading); font-size:1.4rem; color:var(--color-text);">More photos being uploaded</h3>
-        <p>We're sorting through thousands of shots from the road. Check back often — the library grows with every adventure.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════ LIGHTBOX ══════════════════════ -->
-  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
-    <button class="lightbox-close" aria-label="Close photo viewer">✕</button>
-    <div class="lightbox-content">
-      <div class="lightbox-icon" style="font-size: 8rem; line-height: 1; margin-bottom: 1.5rem;"></div>
-      <p class="lightbox-caption" style="font-family:var(--font-heading); font-size: 1.5rem; color: var(--color-text);"></p>
-      <p class="lightbox-sub" style="font-family:var(--font-mono); font-size:.85rem; color:var(--color-text-muted); margin-top:.5rem;"></p>
-    </div>
-  </div>
-
-  <!-- ══════════════════════ FOOTER ══════════════════════ -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo-link">
-            <img src="images/logo.svg" alt="The Rugged Nerd" width="160" height="36" />
-          </a>
-          <p>Where wilderness meets technology. A family's guide to adventuring with purpose — and good Wi-Fi.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigate</h4>
+      .coming-soon-banner p {
+        color: var(--color-text-muted);
+        max-width: 440px;
+        margin: 0.5rem auto 0;
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ══════════════════════ HEADER ══════════════════════ -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a
+          href="index.html"
+          class="logo-link"
+          aria-label="The Rugged Nerd — Home"
+        >
+          <img
+            src="images/shield.png"
+            alt="The Rugged Nerd"
+            width="60"
+            height="60"
+          />
+        </a>
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="resources.html">Resources</a></li>
             <li><a href="photos.html">Photos</a></li>
           </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Blog Topics</h4>
-          <ul>
-            <li><a href="blog.html?cat=trips">Trip Reports</a></li>
-            <li><a href="blog.html?cat=tips">RV Tips</a></li>
-            <li><a href="blog.html?cat=reviews">Reviews</a></li>
-            <li><a href="blog.html?cat=gear">Gear &amp; Tech</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Downloads</h4>
-          <ul>
-            <li><a href="assets/downloads/packing-checklist-family.pdf">Packing Checklist</a></li>
-            <li><a href="assets/downloads/pre-departure-full.pdf">Pre-Departure</a></li>
-            <li><a href="assets/downloads/maintenance-log-trailer.pdf">Maintenance Log</a></li>
-            <li><a href="assets/downloads/travel-log-trip.pdf">Travel Log</a></li>
-          </ul>
-        </div>
+        </nav>
+        <button
+          class="nav-toggle"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span></span><span></span><span></span>
+        </button>
       </div>
-      <div class="footer-bottom">
-        <span class="footer-copy">© 2025 The Rugged Nerd · theruggednerd.com · All rights reserved</span>
-        <span class="footer-tagline"><span class="dot"></span>Built by a nerd. Tested in the wild.</span>
+    </header>
+
+    <!-- ══════════════════════ PAGE HEADER ══════════════════════ -->
+    <div class="page-header">
+      <div class="container">
+        <p
+          class="section-eyebrow"
+          style="
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+          "
+        >
+          <span
+            style="
+              font-family: var(--font-mono);
+              font-size: 0.78rem;
+              letter-spacing: 0.2em;
+              color: var(--color-text-faint);
+            "
+            >// adventure gallery</span
+          >
+        </p>
+        <h1>Photo Library</h1>
+        <p class="page-subtitle">
+          Moments captured from the road — mountains, deserts, forests,
+          campfires, and the crew that makes it all worth it.
+        </p>
       </div>
     </div>
-  </footer>
 
-  <script src="js/main.js"></script>
-</body>
+    <!-- ══════════════════════ PHOTO CONTENT ══════════════════════ -->
+    <section class="photos-section">
+      <div class="container">
+        <!-- Album tabs -->
+        <div class="album-tabs" role="group" aria-label="Photo albums">
+          <button class="cat-btn active" data-filter="all">All Photos</button>
+          <button class="cat-btn" data-filter="landscapes">
+            🏔 Landscapes
+          </button>
+          <button class="cat-btn" data-filter="camplife">🔥 Camp Life</button>
+          <button class="cat-btn" data-filter="family">👨‍👩‍👧‍👦 Family</button>
+          <button class="cat-btn" data-filter="rig">🚌 The Rig</button>
+        </div>
+
+        <!-- ── Landscapes ── -->
+        <div class="album-section">
+          <div class="section-header" style="margin-bottom: 1.5rem">
+            <h2 class="section-title" style="font-size: 1.5rem">
+              🏔 Landscapes
+            </h2>
+          </div>
+          <div class="photo-grid">
+            <div
+              class="photo-item wide"
+              data-caption="Rocky Mountain Sunrise"
+              data-icon="🏔️"
+              data-sub="Rocky Mountain National Park · Feb 2025"
+              data-cat="landscapes"
+            >
+              <div class="photo-placeholder" style="aspect-ratio: 21/9">
+                🏔️
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    color: var(--color-text-faint);
+                    margin-top: 0.25rem;
+                  "
+                  >Rocky Mountain Sunrise</span
+                >
+              </div>
+              <div class="photo-overlay">
+                <div class="photo-caption">
+                  Rocky Mountain Sunrise
+                  <span>Rocky Mountain NP · Feb 2025</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="photo-item"
+              data-caption="Zion Canyon at Dusk"
+              data-icon="🏜️"
+              data-sub="Zion National Park · Dec 2024"
+              data-cat="landscapes"
+            >
+              <div class="photo-placeholder">
+                🏜️
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    color: var(--color-text-faint);
+                    margin-top: 0.25rem;
+                  "
+                  >Zion Canyon at Dusk</span
+                >
+              </div>
+              <div class="photo-overlay">
+                <div class="photo-caption">
+                  Zion Canyon at Dusk
+                  <span>Zion National Park · Dec 2024</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="photo-item"
+              data-caption="Smoky Mountain Mist"
+              data-icon="🌫️"
+              data-sub="Great Smoky Mountains · Oct 2024"
+              data-cat="landscapes"
+            >
+              <div class="photo-placeholder">
+                🌫️
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    color: var(--color-text-faint);
+                    margin-top: 0.25rem;
+                  "
+                  >Smoky Mountain Mist</span
+                >
+              </div>
+              <div class="photo-overlay">
+                <div class="photo-caption">
+                  Smoky Mountain Mist
+                  <span>Great Smoky Mountains · Oct 2024</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="photo-item"
+              data-caption="Pacific Coast Lookout"
+              data-icon="🌊"
+              data-sub="PCH · Jul 2024"
+              data-cat="landscapes"
+            >
+              <div class="photo-placeholder">
+                🌊
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    color: var(--color-text-faint);
+                    margin-top: 0.25rem;
+                  "
+                  >Pacific Coast Lookout</span
+                >
+              </div>
+              <div class="photo-overlay">
+                <div class="photo-caption">
+                  Pacific Coast Lookout
+                  <span>PCH · Jul 2024</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="photo-item"
+              data-caption="High Desert Stars"
+              data-icon="🌌"
+              data-sub="Utah Backcountry · Aug 2024"
+              data-cat="landscapes"
+            >
+              <div class="photo-placeholder">
+                🌌
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    color: var(--color-text-faint);
+                    margin-top: 0.25rem;
+                  "
+                  >High Desert Stars</span
+                >
+              </div>
+              <div class="photo-overlay">
+                <div class="photo-caption">
+                  High Desert Stars
+                  <span>Utah Backcountry · Aug 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Camp Life ── -->
+        <div class="album-section">
+          <div class="section-header" style="margin-bottom: 1.5rem">
+            <h2 class="section-title" style="font-size: 1.5rem">
+              🔥 Camp Life
+            </h2>
+          </div>
+          <div class="photo-grid">
+            <div
+              class="photo-item"
+              data-caption="Morning Coffee Ritual"
+              data-icon="☕"
+              data-sub="Wherever we parked"
+              data-cat="camplife"
+            >
+              <div class="photo-placeholder">
+                ☕
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    color: var(--color-text-faint);
+                    margin-top: 0.25rem;
+                  "
+                  >Morning Coffee Ritual</span
+                >
+              </div>
+              <div class="photo-overlay">
+                <div class="photo-caption">
+                  Morning Coffee Ritual<span>Every single morning</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="photo-item"
+              data-caption="Campfire Council"
+              data-icon="🔥"
+              data-sub="Watchman Campground, Zion · Dec 2024"
+              data-cat="camplife"
+            >
+              <div class="photo-placeholder">
+                🔥
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    color: var(--color-text-faint);
+                    margin-top: 0.25rem;
+                  "
+                  >Campfire Council</span
+                >
+              </div>
+              <div class="photo-overlay">
+                <div class="photo-caption">
+                  Campfire Council<span>Watchman Campground · Dec 2024</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="photo-item"
+              data-caption="Dorey Setup at Golden Hour"
+              data-icon="🌅"
+              data-sub="Colorado campsite · Feb 2025"
+              data-cat="camplife"
+            >
+              <div class="photo-placeholder">
+                🌅
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    color: var(--color-text-faint);
+                    margin-top: 0.25rem;
+                  "
+                  >Dorey at Golden Hour</span
+                >
+              </div>
+              <div class="photo-overlay">
+                <div class="photo-caption">
+                  Dorey at Golden Hour<span>Colorado · Feb 2025</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="photo-item"
+              data-caption="Solar Array Online"
+              data-icon="☀️"
+              data-sub="Off-grid boondocking · Jun 2024"
+              data-cat="camplife"
+            >
+              <div class="photo-placeholder">
+                ☀️
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    color: var(--color-text-faint);
+                    margin-top: 0.25rem;
+                  "
+                  >Solar Array Online</span
+                >
+              </div>
+              <div class="photo-overlay">
+                <div class="photo-caption">
+                  Solar Array Online<span>Off-grid boondocking · Jun 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Family ── -->
+        <div class="album-section">
+          <div class="section-header" style="margin-bottom: 1.5rem">
+            <h2 class="section-title" style="font-size: 1.5rem">👨‍👩‍👧‍👦 Family</h2>
+          </div>
+          <div class="photo-grid">
+            <div
+              class="photo-item"
+              data-caption="The Whole Crew"
+              data-icon="👨‍👩‍👧‍👦"
+              data-sub="Somewhere epic"
+              data-cat="family"
+            >
+              <div class="photo-placeholder">
+                👨‍👩‍👧‍👦
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    color: var(--color-text-faint);
+                    margin-top: 0.25rem;
+                  "
+                  >The Whole Crew</span
+                >
+              </div>
+              <div class="photo-overlay">
+                <div class="photo-caption">
+                  The Whole Crew<span>Somewhere epic</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="photo-item"
+              data-caption="Kid #1 Summit"
+              data-icon="🧗"
+              data-sub="Rocky Mountain NP · Feb 2025"
+              data-cat="family"
+            >
+              <div class="photo-placeholder">
+                🧗
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    color: var(--color-text-faint);
+                    margin-top: 0.25rem;
+                  "
+                  >Summit Day</span
+                >
+              </div>
+              <div class="photo-overlay">
+                <div class="photo-caption">
+                  Summit Day<span>Rocky Mountain NP · Feb 2025</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="photo-item"
+              data-caption="The Dogs on Patrol"
+              data-icon="🐕"
+              data-sub="Every campsite ever"
+              data-cat="family"
+            >
+              <div class="photo-placeholder">
+                🐕
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    color: var(--color-text-faint);
+                    margin-top: 0.25rem;
+                  "
+                  >The Dogs on Patrol</span
+                >
+              </div>
+              <div class="photo-overlay">
+                <div class="photo-caption">
+                  The Dogs on Patrol<span>Every campsite, ever</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── The Rig ── -->
+        <div class="album-section">
+          <div class="section-header" style="margin-bottom: 1.5rem">
+            <h2 class="section-title" style="font-size: 1.5rem">🚌 The Rig</h2>
+          </div>
+          <div class="photo-grid">
+            <div
+              class="photo-item"
+              data-caption="Blue &amp; Dorey Hitched Up"
+              data-icon="🛻"
+              data-sub="Pre-departure morning"
+              data-cat="rig"
+            >
+              <div class="photo-placeholder">
+                🛻
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    color: var(--color-text-faint);
+                    margin-top: 0.25rem;
+                  "
+                  >Blue &amp; Dorey Ready to Roll</span
+                >
+              </div>
+              <div class="photo-overlay">
+                <div class="photo-caption">
+                  Blue &amp; Dorey Ready to Roll<span
+                    >Pre-departure morning</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="photo-item"
+              data-caption="Interior — The Nerd Station"
+              data-icon="💻"
+              data-sub="Dorey's cockpit"
+              data-cat="rig"
+            >
+              <div class="photo-placeholder">
+                💻
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    color: var(--color-text-faint);
+                    margin-top: 0.25rem;
+                  "
+                  >The Nerd Station</span
+                >
+              </div>
+              <div class="photo-overlay">
+                <div class="photo-caption">
+                  The Nerd Station<span
+                    >Dorey's cockpit — where the work happens</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="photo-item"
+              data-caption="Blue on a Mountain Pass"
+              data-icon="🏔️"
+              data-sub="Colorado · Feb 2025"
+              data-cat="rig"
+            >
+              <div class="photo-placeholder">
+                🏔️🛻
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    color: var(--color-text-faint);
+                    margin-top: 0.25rem;
+                  "
+                  >Blue on the Pass</span
+                >
+              </div>
+              <div class="photo-overlay">
+                <div class="photo-caption">
+                  Blue on the Pass<span>Colorado · Feb 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- More photos note -->
+        <div class="coming-soon-banner">
+          <span class="big-icon">📸</span>
+          <h3
+            style="
+              font-family: var(--font-heading);
+              font-size: 1.4rem;
+              color: var(--color-text);
+            "
+          >
+            More photos being uploaded
+          </h3>
+          <p>
+            We're sorting through thousands of shots from the road. Check back
+            often — the library grows with every adventure.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ LIGHTBOX ══════════════════════ -->
+    <div
+      id="lightbox"
+      class="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Photo viewer"
+    >
+      <button class="lightbox-close" aria-label="Close photo viewer">✕</button>
+      <div class="lightbox-content">
+        <div
+          class="lightbox-icon"
+          style="font-size: 8rem; line-height: 1; margin-bottom: 1.5rem"
+        ></div>
+        <p
+          class="lightbox-caption"
+          style="
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-text);
+          "
+        ></p>
+        <p
+          class="lightbox-sub"
+          style="
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-top: 0.5rem;
+          "
+        ></p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════ FOOTER ══════════════════════ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo-link">
+              <img
+                src="images/shield.png"
+                alt="The Rugged Nerd"
+                width="60"
+                height="60"
+              />
+            </a>
+            <p>
+              Where wilderness meets technology. A family's guide to adventuring
+              with purpose — and good Wi-Fi.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="photos.html">Photos</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Blog Topics</h4>
+            <ul>
+              <li><a href="blog.html?cat=trips">Trip Reports</a></li>
+              <li><a href="blog.html?cat=tips">RV Tips</a></li>
+              <li><a href="blog.html?cat=reviews">Reviews</a></li>
+              <li><a href="blog.html?cat=gear">Gear &amp; Tech</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Downloads</h4>
+            <ul>
+              <li>
+                <a href="assets/downloads/packing-checklist-family.pdf"
+                  >Packing Checklist</a
+                >
+              </li>
+              <li>
+                <a href="assets/downloads/pre-departure-full.pdf"
+                  >Pre-Departure</a
+                >
+              </li>
+              <li>
+                <a href="assets/downloads/maintenance-log-trailer.pdf"
+                  >Maintenance Log</a
+                >
+              </li>
+              <li>
+                <a href="assets/downloads/travel-log-trip.pdf">Travel Log</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-copy"
+            >© 2025 The Rugged Nerd · theruggednerd.com · All rights
+            reserved</span
+          >
+          <span class="footer-tagline"
+            ><span class="dot"></span>Built by a nerd. Tested in the wild.</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>

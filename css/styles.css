@@ -1235,6 +1235,13 @@ img {
   margin-bottom: var(--space-xl);
 }
 
+.post-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .post-body {
   font-size: 1.07rem;
   color: var(--color-text-muted);

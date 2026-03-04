@@ -9,6 +9,24 @@
 
   const SEARCH_ITEMS = [
     {
+      id: "blog-camper-deal-tips",
+      type: "blog",
+      title: "The Best Tips to Get a Great Deal on a Camper",
+      content:
+        "BLUF guide to RV buying: shop in late fall or winter, compare towable classes, evaluate craftsmanship, check size limits, and negotiate with screenshot-backed pricing.",
+      url: "blog/camper-deal-tips.html",
+      date: "2026-03-04",
+      tags: [
+        "camper",
+        "rv",
+        "travel trailer",
+        "buying",
+        "negotiation",
+        "pricing",
+        "rv tips",
+      ],
+    },
+    {
       id: "blog-rocky-mountain",
       type: "blog",
       title: "Rocky Mountain High: Colorado",

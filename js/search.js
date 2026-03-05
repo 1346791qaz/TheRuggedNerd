@@ -79,24 +79,6 @@
       ],
     },
     {
-      id: "blog-falling-water-falls",
-      type: "blog",
-      title: "Falling Water Falls",
-      content:
-        "Post covering Falling Water Falls in Sand Gap, Arkansas, with nearby Pedestal Rock and King's Bluff trail references.",
-      url: "blog/falling-water-falls.html",
-      date: "2025-12-15",
-      tags: [
-        "falling water falls",
-        "sand gap",
-        "arkansas",
-        "pedestal rock",
-        "kings bluff",
-        "waterfall",
-      ],
-    },
-
-    {
       id: "resource-family-packing",
       type: "resources",
       title: "Family RV Packing Checklist",

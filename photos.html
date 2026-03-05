@@ -19,34 +19,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="The Rugged Nerd Photos — This page is currently under construction."
+      content="The Rugged Nerd photo library, organized by blog post albums with all trip images in one place."
     />
-    <title>Photos — Under Construction | The Rugged Nerd</title>
+    <title>Photos | The Rugged Nerd</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪓</text></svg>"
     />
     <style>
-      .coming-soon-banner {
-        text-align: center;
-        padding: 4rem 2rem;
+      .photo-library {
+        padding: var(--space-xl) 0;
+      }
+
+      .album-section {
+        margin-bottom: var(--space-xl);
+        padding: var(--space-lg);
         background: var(--color-bg-card);
         border: 1px solid var(--color-border);
         border-radius: var(--radius-lg);
         box-shadow: var(--shadow-card);
       }
 
-      .coming-soon-banner .big-icon {
-        font-size: 4rem;
-        display: block;
-        margin-bottom: 1rem;
+      .album-head {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--space-sm);
       }
 
-      .coming-soon-banner p {
+      .album-head h2 {
+        margin: 0;
+        font-family: var(--font-heading);
+        color: var(--color-text);
+      }
+
+      .album-link {
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+      }
+
+      .album-note {
         color: var(--color-text-muted);
-        max-width: 520px;
-        margin: 0.75rem auto 0;
+        margin-bottom: var(--space-md);
       }
     </style>
   </head>
@@ -110,43 +127,323 @@
         </p>
         <h1>Photo Library</h1>
         <p class="page-subtitle">
-          This page is being updated with fresh adventure photos and organized
-          albums.
+          Every trip image is organized into blog post albums so you can browse
+          the full photo sets in one place.
         </p>
       </div>
     </div>
 
-    <!-- ══════════════════════ UNDER CONSTRUCTION ══════════════════════ -->
-    <section class="photos-section">
+    <!-- ══════════════════════ PHOTO LIBRARY ══════════════════════ -->
+    <section class="photos-section photo-library">
       <div class="container">
-        <div class="coming-soon-banner">
-          <span class="big-icon">🚧</span>
-          <h2
-            style="
-              font-family: var(--font-heading);
-              font-size: 1.5rem;
-              color: var(--color-text);
-            "
-          >
-            Under Construction
-          </h2>
-          <p>
-            The photo gallery is currently under construction while we upload
-            new images and reorganize everything.
+        <article class="album-section">
+          <div class="album-head">
+            <h2>Ha Ha Tonka Castle Ruins</h2>
+            <a href="blog/ha-ha-tonka-castle-ruins.html" class="album-link"
+              >Read post →</a
+            >
+          </div>
+          <p class="album-note">9 photos · Ha Ha Tonka Castle Ruins trip</p>
+          <div class="photo-grid" role="list" aria-label="Ha Ha Tonka photos">
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/ha-ha-tonka-castle-ruins/DSC_0054.JPG"
+                alt="Ha Ha Tonka photo DSC 0054"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                DSC_0054
+                <span>Ha Ha Tonka Castle Ruins</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/ha-ha-tonka-castle-ruins/DSC_0065.JPG"
+                alt="Ha Ha Tonka photo DSC 0065"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                DSC_0065
+                <span>Ha Ha Tonka Castle Ruins</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/ha-ha-tonka-castle-ruins/DSC_0069.JPG"
+                alt="Ha Ha Tonka photo DSC 0069"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                DSC_0069
+                <span>Ha Ha Tonka Castle Ruins</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/ha-ha-tonka-castle-ruins/DSC_0075.JPG"
+                alt="Ha Ha Tonka photo DSC 0075"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                DSC_0075
+                <span>Ha Ha Tonka Castle Ruins</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/ha-ha-tonka-castle-ruins/DSC_0118.JPG"
+                alt="Ha Ha Tonka photo DSC 0118"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                DSC_0118
+                <span>Ha Ha Tonka Castle Ruins</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/ha-ha-tonka-castle-ruins/DSC_0126.JPG"
+                alt="Ha Ha Tonka photo DSC 0126"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                DSC_0126
+                <span>Ha Ha Tonka Castle Ruins</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/ha-ha-tonka-castle-ruins/DSC_0132.JPG"
+                alt="Ha Ha Tonka photo DSC 0132"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                DSC_0132
+                <span>Ha Ha Tonka Castle Ruins</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/ha-ha-tonka-castle-ruins/DSC_0143.JPG"
+                alt="Ha Ha Tonka photo DSC 0143"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                DSC_0143
+                <span>Ha Ha Tonka Castle Ruins</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/ha-ha-tonka-castle-ruins/DSC_0144.JPG"
+                alt="Ha Ha Tonka photo DSC 0144"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                DSC_0144
+                <span>Ha Ha Tonka Castle Ruins</span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="album-section">
+          <div class="album-head">
+            <h2>The Best Tips to Get a Great Deal on a Camper</h2>
+            <a href="blog/camper-deal-tips.html" class="album-link"
+              >Read post →</a
+            >
+          </div>
+          <p class="album-note">1 photo · Camper deal tips</p>
+          <div class="photo-grid" role="list" aria-label="Camper deal photos">
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/camper-deal-tips/deal.jpg"
+                alt="Camper deal post photo"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                deal.jpg
+                <span>Camper Deal Tips</span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="album-section">
+          <div class="album-head">
+            <h2>Osceola RV Park</h2>
+            <a href="blog/osceola-rv-park.html" class="album-link"
+              >Read post →</a
+            >
+          </div>
+          <p class="album-note">1 photo · Osceola RV Park review</p>
+          <div class="photo-grid" role="list" aria-label="Osceola photos">
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/osceola-rv-park/Osceola.jpg"
+                alt="Osceola RV Park photo"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                Osceola.jpg
+                <span>Osceola RV Park</span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="album-section">
+          <div class="album-head">
+            <h2>North Arkansas — A Weekend With A View</h2>
+            <a
+              href="blog/north-arkansas-a-weekend-with-a-view.html"
+              class="album-link"
+              >Read post →</a
+            >
+          </div>
+          <p class="album-note">
+            12 photos · Ozark View RV Park and surrounding Arkansas sights
           </p>
           <div
-            style="
-              margin-top: 1.5rem;
-              display: flex;
-              justify-content: center;
-              gap: 0.75rem;
-              flex-wrap: wrap;
-            "
+            class="photo-grid"
+            role="list"
+            aria-label="North Arkansas photos"
           >
-            <a href="index.html" class="btn btn-outline">Back Home</a>
-            <a href="blog.html" class="btn btn-primary">Read the Blog</a>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/north-arkansas-a-weekend-with-a-view/20210320_124332.jpg"
+                alt="North Arkansas trip photo 20210320 124332"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                20210320_124332.jpg
+                <span>North Arkansas Weekend</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/north-arkansas-a-weekend-with-a-view/blackstone_steaks.jpg"
+                alt="Camp cooking photo blackstone steaks"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                blackstone_steaks.jpg
+                <span>North Arkansas Weekend</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/north-arkansas-a-weekend-with-a-view/campsite.jpg"
+                alt="Campsite photo at Ozark View RV Park"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                campsite.jpg
+                <span>North Arkansas Weekend</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/north-arkansas-a-weekend-with-a-view/cliff_sitting.jpg"
+                alt="Cliff sitting photo from Arkansas trip"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                cliff_sitting.jpg
+                <span>North Arkansas Weekend</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/north-arkansas-a-weekend-with-a-view/e.jpg"
+                alt="Extra Arkansas trail photo"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                e.jpg
+                <span>North Arkansas Weekend</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/north-arkansas-a-weekend-with-a-view/hidden_falls_1.jpg"
+                alt="Hidden falls photo one from Arkansas trip"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                hidden_falls_1.jpg
+                <span>North Arkansas Weekend</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/north-arkansas-a-weekend-with-a-view/hidden_falls_2.jpg"
+                alt="Hidden falls photo two from Arkansas trip"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                hidden_falls_2.jpg
+                <span>North Arkansas Weekend</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/north-arkansas-a-weekend-with-a-view/magazine_mountain.jpg"
+                alt="Magazine Mountain view from Arkansas trip"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                magazine_mountain.jpg
+                <span>North Arkansas Weekend</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/north-arkansas-a-weekend-with-a-view/map_route.jpg"
+                alt="Trip route map for North Arkansas weekend"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                map_route.jpg
+                <span>North Arkansas Weekend</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/north-arkansas-a-weekend-with-a-view/pedestal_rock.jpg"
+                alt="Pedestal Rock photo from Arkansas trip"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                pedestal_rock.jpg
+                <span>North Arkansas Weekend</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/north-arkansas-a-weekend-with-a-view/rock_water.jpg"
+                alt="Rock and water detail from Arkansas trip"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                rock_water.jpg
+                <span>North Arkansas Weekend</span>
+              </figcaption>
+            </figure>
+            <figure class="photo-item" role="listitem">
+              <img
+                src="images/photos/north-arkansas-a-weekend-with-a-view/treeline.jpg"
+                alt="Treeline view from Arkansas trip"
+                loading="lazy"
+              />
+              <figcaption class="photo-caption">
+                treeline.jpg
+                <span>North Arkansas Weekend</span>
+              </figcaption>
+            </figure>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
@@ -214,7 +511,7 @@
         </div>
         <div class="footer-bottom">
           <span class="footer-copy"
-            >© 2025 The Rugged Nerd · theruggednerd.com · All rights
+            >© 2026 The Rugged Nerd · theruggednerd.com · All rights
             reserved</span
           >
           <span class="footer-tagline"

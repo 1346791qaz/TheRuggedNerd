@@ -192,6 +192,56 @@
       updateThemeToggleLabel(themeToggleButton, nextTheme);
       window.dispatchEvent(new Event("scroll"));
     });
+
+    const siteHeader = document.querySelector(".site-header");
+    if (siteHeader && !siteHeader.querySelector(".header-social")) {
+      const headerSocial = document.createElement("div");
+      headerSocial.className = "header-social";
+      headerSocial.setAttribute("aria-label", "Social media links");
+      headerSocial.innerHTML = `
+        <a
+          class="social-link"
+          href="https://www.youtube.com/@theruggednerd"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="The Rugged Nerd on YouTube"
+        >
+          <span class="social-icon" aria-hidden="true">▶</span>
+          <span>YouTube</span>
+        </a>
+        <a
+          class="social-link"
+          href="https://x.com/theruggednerd"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="The Rugged Nerd on X"
+        >
+          <span class="social-icon" aria-hidden="true">𝕏</span>
+          <span>X</span>
+        </a>
+        <a
+          class="social-link"
+          href="https://www.instagram.com/theruggednerd/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="The Rugged Nerd on Instagram"
+        >
+          <span class="social-icon" aria-hidden="true">📷</span>
+          <span>Instagram</span>
+        </a>
+        <a
+          class="social-link"
+          href="https://www.twitch.tv/theruggednerd"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="The Rugged Nerd on Twitch"
+        >
+          <span class="social-icon" aria-hidden="true">🎮</span>
+          <span>Twitch</span>
+        </a>
+      `;
+      siteHeader.appendChild(headerSocial);
+    }
   }
 
   // ── Mobile nav toggle ──────────────────────────────────────

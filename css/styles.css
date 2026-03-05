@@ -1741,6 +1741,23 @@ a:hover {
   border-radius: 999px;
 }
 
+.header-social {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg) 0.8rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.header-social .social-link {
+  font-size: 0.74rem;
+  padding: 0.34rem 0.64rem;
+}
+
 .theme-toggle-item {
   display: flex;
   align-items: center;
@@ -2761,10 +2778,15 @@ body,
 
 @media (max-width: 640px) {
   .main-nav {
-    top: 112px;
+    top: 154px;
     background: rgba(255, 255, 255, 0.98);
     border-bottom: 1px solid var(--color-border);
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.14);
+  }
+
+  .header-social {
+    padding: 0 1rem 0.7rem;
+    justify-content: flex-start;
   }
 
   .main-nav ul {

@@ -62,6 +62,27 @@
       ],
     },
     {
+      id: "blog-rv-classes-101",
+      type: "blog",
+      title: "RV Classes 101",
+      content:
+        "A practical, no-fluff guide to RV classes so new families can choose the right rig with confidence.",
+      url: "blog/rv-classes-101.html",
+      date: "2026-03-10",
+      tags: [
+        "rv classes",
+        "class a",
+        "class b",
+        "class c",
+        "fifth wheel",
+        "travel trailer",
+        "rv buying guide",
+        "family rv",
+      ],
+      excerpt:
+        "Compares Class A, Class B, Class C, fifth wheels, and travel trailers with real-world pros and cons for family travel.",
+    },
+    {
       id: "blog-north-arkansas-weekend",
       type: "blog",
       title: "North Arkansas — A Weekend With A View",
